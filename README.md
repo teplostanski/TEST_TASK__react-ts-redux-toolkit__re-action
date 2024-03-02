@@ -1,30 +1,22 @@
-# React + TypeScript + Vite
+# [Демо](https://teplostanski.github.io/react-ts-redux-toolkit--re-action--test-task/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Тестовое задание Frontend разработчик
 
-Currently, two official plugins are available:
+Создать одностраничное приложение, которое запрашивает у API список элементов.
+Необходимые элементы страницы:
+- список элементов (выводить по 10 элементов на страницу)
+- элемент должен содержать id, заголовок и контент
+- пагинация с возможностью переходить между страницами
+- поиск - инпут с кнопкой для фильтрации запроса
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Можно использовать любую API, которая поддерживает пагинацию и фильтр, например jsonplaceholder.typicode.com
 
-## Expanding the ESLint configuration
+Использовать стек: TypeScript, React, Redux toolkit, Axios.
+Стили на ваше усмотрение. Адаптив не обязателен.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Требования:
+- список элементов, номер страницы и состояние запроса должны храниться в Redux
+- запросы выполнять через Redux AsyncThunk с последующим обновлением состояния
+- информировать пользователя о состоянии запроса (при загрузке показать "Loading...", при отсутствии элементов написать, что ничего нет)
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Бонус! (не обязательно): в найденных элементах выделять красным фрагменты текста, которые введены в поле поиска
