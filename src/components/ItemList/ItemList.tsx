@@ -6,17 +6,16 @@ import PaginationControls from '../PaginationControls/PaginationControls';
 
 const ItemList = () => {
   const dispatch: AppDispatch = useDispatch();
-  const { items, loading } = useSelector((state: RootState) => state.posts);
+  const { items, loading, page } = useSelector((state: RootState) => state.posts);
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     dispatch(loadPosts());
-  }, [dispatch]);
+  }, [dispatch, page, searchTerm]);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     dispatch(setSearchQuery(searchTerm));
-    dispatch(loadPosts());
   };
 
   return (
