@@ -1,23 +1,31 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { setPage } from '../../features/posts/postsSlice';
 import { RootState } from '../../app/store';
+import styles from './PaginationControls.module.scss';
+import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md';
+import Button from '../Button/Button';
 
 const PaginationControls = () => {
   const dispatch = useDispatch();
-  const currentPage = useSelector((state: RootState) => state.posts.page);
+  const { page } = useSelector((state: RootState) => state.posts);
 
   const goToNextPage = () => {
-    dispatch(setPage(currentPage + 1));
+    dispatch(setPage(page + 1));
   };
 
   const goToPreviousPage = () => {
-    dispatch(setPage(currentPage - 1));
+    dispatch(setPage(page - 1));
   };
 
   return (
-    <div>
-      <button onClick={goToPreviousPage}>Назад</button>
-      <button onClick={goToNextPage}>Вперед</button>
+    <div className={styles.container}>
+      <p>Страница {page}</p>
+      <Button onClick={goToPreviousPage}>
+        <MdArrowBackIos color="white" />
+      </Button>
+      <Button onClick={goToNextPage}>
+        <MdArrowForwardIos color="white" />
+      </Button>
     </div>
   );
 };

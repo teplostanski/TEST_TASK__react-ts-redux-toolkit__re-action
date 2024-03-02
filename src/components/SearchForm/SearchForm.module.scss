@@ -1,0 +1,25 @@
+.search {
+  &Form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  &Input {
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    padding-left: 10px;
+    color: #ffffff;
+    &:focus {
+      outline: none;
+    }
+    &Container {
+      background: #363636;
+      border-radius: 8px;
+    }
+  }
+}
+
+.clearButton {
+  background-color: transparent !important;
+}

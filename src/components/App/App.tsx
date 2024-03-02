@@ -1,12 +1,13 @@
-import './App.css';
 import ItemList from '../ItemList/ItemList';
+import PaginationControls from '../PaginationControls/PaginationControls';
+import styles from './App.module.scss'
 
-function App() {
-
+const App = () => {
   return (
-    <>
+    <div className={styles.app}>
       <ItemList />
-    </>
+      <PaginationControls />
+    </div>
   );
 }
 
