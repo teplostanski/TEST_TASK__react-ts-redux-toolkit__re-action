@@ -6,8 +6,9 @@ export const loadPosts = createAsyncThunk(
   'posts/loadPosts',
   async (_arg, { getState }) => {
     const state: any = getState();
-    const currentPage = state.posts.page || 1;
-    const response = await fetchPosts(currentPage);
+    const currentPage = state.posts.page;
+    const searchQuery = state.posts.searchQuery;
+    const response = await fetchPosts(currentPage, 10, searchQuery);
     return response;
   }
 );
@@ -18,8 +19,18 @@ const postsSlice = createSlice({
     items: [],
     page: 1,
     loading: false,
+    totalPages: 0,
+    searchQuery: '',
   },
-  reducers: {},
+  reducers: {
+    setPage: (state, action) => {
+      state.page = action.payload;
+    },
+
+    setSearchQuery: (state, action) => {
+      state.searchQuery = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(loadPosts.pending, (state) => {
       state.loading = true;
@@ -35,3 +46,4 @@ const postsSlice = createSlice({
 });
 
 export default postsSlice.reducer;
+export const { setPage, setSearchQuery } = postsSlice.actions;

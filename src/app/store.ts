@@ -6,3 +6,5 @@ export const store = configureStore({
     posts: postsReducer,
   },
 });
+
+export type RootState = ReturnType<typeof store.getState>;
