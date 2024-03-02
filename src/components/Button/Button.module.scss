@@ -1,13 +1,15 @@
 .button {
   border-radius: 8px;
-  border: none;
+  border: 2px solid transparent;
   background-color: #1a1a1a;
   cursor: pointer;
   width: 50px;
   height: 45px;
+  
   &:hover {
     border-color: #646cff;
   }
+  
   &:focus,
   &:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;

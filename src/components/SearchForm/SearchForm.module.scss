@@ -22,4 +22,7 @@
 
 .clearButton {
   background-color: transparent !important;
+  &:hover {
+    border-color: #4b4b4b !important;
+  }
 }
