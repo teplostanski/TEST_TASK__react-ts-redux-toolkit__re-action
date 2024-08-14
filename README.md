@@ -1,4 +1,4 @@
-# [Демо](https://teplostanski.github.io/react-ts-redux-toolkit--re-action--test-task/)
+# [Демо](https://teplostanski.github.io/TEST_TASK__react-ts-redux-toolkit__re-action/)
 
 Тестовое задание Frontend разработчик
 
